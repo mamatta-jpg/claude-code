@@ -1,0 +1,431 @@
+# Instincts generated from https://github.com/mamatta-jpg/claude-code
+# Generated: 2026-06-20T13:52:48.740Z
+# Version: 2.0
+# NOTE: This file supplements (does not replace) any existing curated instincts.
+# High-confidence manually curated instincts should be preserved alongside these.
+
+---
+id: claude-code-commit-conventional
+trigger: "when writing a commit message"
+confidence: 0.85
+domain: git
+source: repo-analysis
+source_repo: https://github.com/mamatta-jpg/claude-code
+---
+
+# Claude Code Commit Conventional
+
+## Action
+
+Use conventional commit format with prefixes: chore
+
+## Evidence
+
+- 47 commits analyzed
+- Detected conventional commit pattern
+- Examples: chore: Update CHANGELOG.md and feed.xml, Remove changelog entry included in error
+
+---
+id: claude-code-commit-length
+trigger: "when writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: https://github.com/mamatta-jpg/claude-code
+---
+
+# Claude Code Commit Length
+
+## Action
+
+Keep commit messages concise (~42 characters)
+
+## Evidence
+
+- Average commit message length: 42 chars
+- Based on 47 commits
+
+---
+id: claude-code-naming-files
+trigger: "when creating a new file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/mamatta-jpg/claude-code
+---
+
+# Claude Code Naming Files
+
+## Action
+
+Use camelCase naming convention
+
+## Evidence
+
+- Analyzed file naming patterns in repository
+- Dominant pattern: camelCase
+
+---
+id: claude-code-import-relative
+trigger: "when importing modules"
+confidence: 0.75
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/mamatta-jpg/claude-code
+---
+
+# Claude Code Import Relative
+
+## Action
+
+Use relative imports for project files
+
+## Evidence
+
+- Import analysis shows relative import pattern
+- Example: import { x } from '../lib/x'
+
+---
+id: claude-code-export-style
+trigger: "when exporting from a module"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/mamatta-jpg/claude-code
+---
+
+# Claude Code Export Style
+
+## Action
+
+Prefer named exports
+
+## Evidence
+
+- Export pattern analysis
+- Dominant style: named
+
+---
+id: claude-code-test-separate
+trigger: "when writing tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/mamatta-jpg/claude-code
+---
+
+# Claude Code Test Separate
+
+## Action
+
+Place tests in the tests/ or __tests__/ directory, mirroring src structure
+
+## Evidence
+
+- Separate test directory pattern detected
+- Tests live in dedicated test folders
+
+---
+id: claude-code-workflow-update-changelog-and-feed
+trigger: "when doing update changelog and feed"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/mamatta-jpg/claude-code
+---
+
+# Claude Code Workflow Update Changelog And Feed
+
+## Action
+
+Follow the update-changelog-and-feed workflow:
+1. Edit CHANGELOG.md to add new entries.
+2. Update feed.xml to reflect the latest changes.
+3. Commit both files together.
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~20x per month
+- Files: CHANGELOG.md, feed.xml
+
+---
+id: claude-code-workflow-update-plugin-or-skill
+trigger: "when doing update plugin or skill"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/mamatta-jpg/claude-code
+---
+
+# Claude Code Workflow Update Plugin Or Skill
+
+## Action
+
+Follow the update-plugin-or-skill workflow:
+1. Edit plugin.json to update metadata or version.
+2. Update documentation files (README.md or SKILL.md).
+3. Modify implementation files as needed.
+4. Commit all related files together.
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: plugins/*/.claude-plugin/plugin.json, plugins/*/README.md, plugins/*/skills/*/SKILL.md
+
+---
+id: claude-code-workflow-update-github-workflow
+trigger: "when doing update github workflow"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/mamatta-jpg/claude-code
+---
+
+# Claude Code Workflow Update Github Workflow
+
+## Action
+
+Follow the update-github-workflow workflow:
+1. Edit one or more .github/workflows/*.yml files.
+2. Commit the changes, often referencing the workflow name in the commit message.
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: .github/workflows/*.yml
+
+---
+id: claude-code-instinct-file-naming-camelCase
+trigger: "When creating or renaming a Python source file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: mamatta-jpg/claude-code
+---
+
+# Claude Code Instinct File Naming CamelCase
+
+## Action
+
+Name the file using camelCase (e.g., myModule.py)
+
+## Evidence
+
+- Pattern in codeStyle.namingConventions.files
+
+---
+id: claude-code-instinct-function-naming-camelCase
+trigger: "When defining a new function in Python"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: mamatta-jpg/claude-code
+---
+
+# Claude Code Instinct Function Naming CamelCase
+
+## Action
+
+Name the function using camelCase (e.g., processData)
+
+## Evidence
+
+- Pattern in codeStyle.namingConventions.functions
+
+---
+id: claude-code-instinct-class-naming-PascalCase
+trigger: "When defining a new class in Python"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: mamatta-jpg/claude-code
+---
+
+# Claude Code Instinct Class Naming PascalCase
+
+## Action
+
+Name the class using PascalCase (e.g., DataProcessor)
+
+## Evidence
+
+- Pattern in codeStyle.namingConventions.classes
+
+---
+id: claude-code-instinct-constant-naming-screaming-snake-case
+trigger: "When defining a constant in Python"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: mamatta-jpg/claude-code
+---
+
+# Claude Code Instinct Constant Naming Screaming Snake Case
+
+## Action
+
+Name the constant using SCREAMING_SNAKE_CASE (e.g., MAX_SIZE)
+
+## Evidence
+
+- Pattern in codeStyle.namingConventions.constants
+
+---
+id: claude-code-instinct-import-style-relative
+trigger: "When importing modules in Python"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: mamatta-jpg/claude-code
+---
+
+# Claude Code Instinct Import Style Relative
+
+## Action
+
+Use relative imports where possible
+
+## Evidence
+
+- Pattern in codeStyle.importStyle
+
+---
+id: claude-code-instinct-export-style-named
+trigger: "When exporting functions, classes, or constants from a module"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: mamatta-jpg/claude-code
+---
+
+# Claude Code Instinct Export Style Named
+
+## Action
+
+Use named exports
+
+## Evidence
+
+- Pattern in codeStyle.exportStyle
+
+---
+id: claude-code-instinct-test-location-separate
+trigger: "When adding or updating tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: mamatta-jpg/claude-code
+---
+
+# Claude Code Instinct Test Location Separate
+
+## Action
+
+Place test files in a separate location from source files
+
+## Evidence
+
+- Pattern in architecture.folderStructure.testLocation
+
+---
+id: claude-code-instinct-git-commit-conventional-chore
+trigger: "When making maintenance or meta changes (e.g., updating changelog, docs, workflows)"
+confidence: 0.85
+domain: git
+source: repo-analysis
+source_repo: mamatta-jpg/claude-code
+---
+
+# Claude Code Instinct Git Commit Conventional Chore
+
+## Action
+
+Prefix the commit message with 'chore:'
+
+## Evidence
+
+- Seen in commit 'chore: Update CHANGELOG.md and feed.xml'
+- Pattern in commits.prefixes
+
+---
+id: claude-code-instinct-git-commit-average-length
+trigger: "When writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: mamatta-jpg/claude-code
+---
+
+# Claude Code Instinct Git Commit Average Length
+
+## Action
+
+Keep the commit message concise, around 42 characters on average
+
+## Evidence
+
+- Pattern in commits.averageLength
+
+---
+id: claude-code-instinct-update-changelog-and-feed
+trigger: "When recent changes need to be recorded and the project's feed updated (typically after a release or notable update)"
+confidence: 0.99
+domain: workflow
+source: repo-analysis
+source_repo: mamatta-jpg/claude-code
+---
+
+# Claude Code Instinct Update Changelog And Feed
+
+## Action
+
+Edit CHANGELOG.md and feed.xml, then commit both files together
+
+## Evidence
+
+- Workflow: update-changelog-and-feed
+- Seen in commit 'chore: Update CHANGELOG.md and feed.xml'
+
+---
+id: claude-code-instinct-update-plugin-or-skill
+trigger: "When releasing a new version or improving a plugin or skill"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: mamatta-jpg/claude-code
+---
+
+# Claude Code Instinct Update Plugin Or Skill
+
+## Action
+
+Edit plugin.json, update documentation (README.md or SKILL.md), modify implementation files, and commit all related files together
+
+## Evidence
+
+- Workflow: update-plugin-or-skill
+- Pattern in plugins/*/.claude-plugin/plugin.json
+
+---
+id: claude-code-instinct-update-github-workflow
+trigger: "When fixing, improving, or updating GitHub Actions workflows"
+confidence: 0.85
+domain: workflow
+source: repo-analysis
+source_repo: mamatta-jpg/claude-code
+---
+
+# Claude Code Instinct Update Github Workflow
+
+## Action
+
+Edit .github/workflows/*.yml files and commit the changes, referencing the workflow name in the commit message
+
+## Evidence
+
+- Workflow: update-github-workflow
+- Pattern in .github/workflows/*.yml
+
